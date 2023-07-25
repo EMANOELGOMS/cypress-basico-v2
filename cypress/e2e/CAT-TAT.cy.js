@@ -18,7 +18,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
   });
 
   //contem todo o passo, porem foram colocados em atalhos
-  it.only('Preencher os campos obrigatórios e enviar o formulário', () => {
+  it('Preencher os campos obrigatórios e enviar o formulário', () => {
       //Mapear cada campo obrigatório
       const longText = 'teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,teste,'
     
@@ -200,11 +200,18 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       
   });
   
-  it('vamos começar', () => {
+  it('acesse a página da política de privacidade removendo o target e então clicando no link', () => {//07.md
+    cy.get('#privacy a')
+    .invoke('removeAttr','target') //Ao clicar abre outra aba na mesma janela, é como se tivesse removento o target
+
+    .click()
+    
+    cy.contains('Talking About Testing').should('be.visible') //verificando se o texto em questão é visivel
       
-  });
-   
-});
+  })
+
+
+})
 
 
 
