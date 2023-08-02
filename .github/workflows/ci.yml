@@ -1,12 +1,25 @@
+# Definição do nome do fluxo de trabalho e emoji para representá-lo.
 name: End-to-end tests 🧪
+
+# Configuração do gatilho do fluxo de trabalho. Este fluxo será executado em um push para o repositório.
 on: [push]
+
+# Definição do início do bloco de jobs (tarefas).
 jobs:
+  # Nome do job (tarefa) que executará os testes do Cypress.
   cypress-run:
+
+    # Especificação da máquina virtual em que o job será executado (Ubuntu 20.04).
     runs-on: ubuntu-20.04
+
+    # Etapas que compõem o job.
     steps:
+
+      # Step para realizar o checkout do código fonte do repositório.
       - name: Checkout
         uses: actions/checkout@v2
 
+      # Step para armazenar em cache as dependências NPM instaladas anteriormente para reutilização em execuções futuras.
       - name: Cache dependencies
         uses: actions/cache@v2
         with:
@@ -15,8 +28,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-npm-
 
+      # Step para instalar as dependências NPM necessárias para executar os testes do Cypress.
       - name: Install NPM dependencies
         run: npm install
 
+      # Step para executar os testes do Cypress usando a ação oficial do Cypress para GitHub Actions.
       - name: Run Cypress tests
         uses: cypress-io/github-action@v2
