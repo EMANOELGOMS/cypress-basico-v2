@@ -1,6 +1,6 @@
 {
   "name": "curso-cypress-v2",
-  "version": "1.0.0",
+  "version": "12.12.0",
   "description": "Repositório da versão 2 do curso básico de Cypress da Escola Talking About Testing",
   "main": "src/index.html",
   "scripts": {    
@@ -26,4 +26,7 @@
   "author": "Walmyr Filho <wlsf82@gmail.com> (https://walmyr.dev/)",
   "license": "MIT",
   "homepage": "https://github.com/wlsf82/cypress-basico-v2#readme"
+
+
+
 }
