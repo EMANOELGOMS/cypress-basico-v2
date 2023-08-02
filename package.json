@@ -10,6 +10,11 @@
     "test": "cypress run"
     
   },
+
+
+  "devDependencies": {
+    "cypress": "12.12.0"
+  },
     
   
   "repository": {
