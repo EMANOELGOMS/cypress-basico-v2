@@ -276,6 +276,15 @@ it('verificar o título da aplicação', () => {
     })
     
   });
+
+  it.only(' encontrar o gato escondido', () => {
+    cy.get('#cat')
+    .invoke('show')
+    .should('be.visible')
+
+    cy.get('#title')
+    .invoke('text', "CCCCCCCC")
+  });
   
   
 
